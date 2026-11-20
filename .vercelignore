@@ -1,0 +1,28 @@
+# Arquivos que NUNCA devem ir para o ar (deploy via Vercel CLI)
+# O comando "vercel --prod" envia a pasta local, inclusive arquivos fora do Git.
+.git
+.gitignore
+.vercel
+.wwebjs_cache
+
+# Ferramentas internas com dados de alunos
+identificar_fotos*.html
+verificacao_fotos.html
+
+# Material pago / documentos
+Capoeira-Quando-a-Danca-Engana-a-Morte.pdf
+*.pdf
+*.xlsx
+
+# Guias e automacoes internas
+guia-make-automacao-cabapua.txt
+prompt-tom-de-voz-mestre-celio.txt
+webhook-google-sheets.js
+credentials.json
+token.json
+*.py
+*.env
+
+# Imagens soltas (usar as versoes otimizadas)
+WhatsApp Image*
+Fotos de treino

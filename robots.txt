@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Arquivos internos e de apoio
+Disallow: /.wwebjs_cache/
+Disallow: /identificar_fotos
+Disallow: /verificacao_fotos
+
+Sitemap: https://cabapua.com.br/sitemap.xml

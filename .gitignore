@@ -1,0 +1,25 @@
+﻿credentials.json
+importar_aniversarios.py
+token.json
+*.py
+*.env
+.env
+
+.vercel
+
+# Cache e arquivos internos que nao devem ser publicados
+.wwebjs_cache/
+identificar_fotos*.html
+verificacao_fotos.html
+guia-make-automacao-cabapua.txt
+prompt-tom-de-voz-mestre-celio.txt
+webhook-google-sheets.js
+
+# E-book pago (nao publicar no site)
+Capoeira-Quando-a-Danca-Engana-a-Morte.pdf
+
+
+# Imagens soltas do WhatsApp (usar versoes otimizadas em WebP)
+WhatsApp Image*.jpeg
+WhatsApp Image*.jpg
+

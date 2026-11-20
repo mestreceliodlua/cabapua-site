@@ -1,0 +1,1697 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C.T.M. Cabapuã Brasil — Artes Marciais, Saúde & Vestuário</title>
+  <meta name="description" content="Ecossistema C.T.M. Cabapuã Brasil: Academia de Artes Marciais, Clínica Selene e Uracan Fight Wear. Guarulhos-SP." />
+
+  <!-- Compartilhamento (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="C.T.M. Cabapuã Brasil" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:url" content="https://cabapua.com.br/" />
+  <meta property="og:title" content="C.T.M. Cabapuã Brasil — Artes Marciais, Saúde & Vestuário" />
+  <meta property="og:description" content="Capoeira, Muay Thai, Jiu-Jitsu e Hapkido em Guarulhos, Clínica Selene de terapias integrativas e Uracan Fight Wear. Sob o método do Mestre Célio D'Lua." />
+  <meta property="og:image" content="https://cabapua.com.br/og-cabapua.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Emblema do C.T.M. Cabapuã Brasil com o Mestre em posição de capoeira" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="C.T.M. Cabapuã Brasil — Artes Marciais, Saúde & Vestuário" />
+  <meta name="twitter:description" content="Capoeira, Muay Thai, Jiu-Jitsu e Hapkido em Guarulhos, Clínica Selene e Uracan Fight Wear." />
+  <meta name="twitter:image" content="https://cabapua.com.br/og-cabapua.jpg" />
+
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="favicon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0D1117;
+      --bg-secondary: #0F172A;
+      --bg-card: #1A1F2E;
+      --bg-nav: rgba(13, 17, 23, 0.92);
+      --text-white: #FFFFFF;
+      --text-gray: #94A3B8;
+      --text-muted: #64748B;
+      --accent-red: #DC2626;
+      --accent-orange: #EA580C;
+      --accent-teal: #0D9488;
+      --accent-blue: #38BDF8;
+      --accent-gold: #EAB308;
+      --neuro-gold: #d4af37;
+      --neuro-gold-light: #f39c12;
+      --neuro-purple: #8e44ad;
+      --neuro-lilac: #9b59b6;
+      --border-subtle: rgba(148, 163, 184, 0.1);
+      --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+      --font-heading: 'Bebas Neue', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-gray);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .logo-img {
+      height: 48px;
+      width: auto;
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+    }
+
+    .section-banner-img {
+      width: 100%;
+      max-width: 800px;
+      max-height: 360px;
+      border-radius: var(--radius);
+      object-fit: cover;
+      margin: 0 auto 40px;
+      display: block;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .selene-img, .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============ HEADER UNIFICADO ============ */
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--bg-nav);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition);
+    }
+
+    .main-header.scrolled {
+      border-bottom-color: var(--border-subtle);
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .main-header .logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .main-header .logo .logo-img {
+      height: 44px;
+      width: auto;
+    }
+
+    .nav-menu ul {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu a {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-red);
+      transition: width var(--transition);
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--text-white);
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a.active::after {
+      width: 100%;
+    }
+
+    .btn-whatsapp-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all var(--transition);
+      flex-shrink: 0;
+    }
+
+    .btn-whatsapp-nav:hover {
+      background: #1da851;
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-white);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: var(--bg-primary);
+      overflow: hidden;
+      padding-top: 68px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 30% 40%, rgba(220, 38, 38, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 70% 60%, rgba(232, 179, 8, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 80%, rgba(13, 148, 136, 0.05) 0%, transparent 50%);
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 0;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: 0;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 60px 24px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .hero-logo {
+      max-width: 280px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-logo:hover {
+      transform: scale(1.03);
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(36px, 6vw, 72px);
+      color: var(--text-white);
+      line-height: 1.05;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 .highlight-red { color: var(--accent-red); }
+    .hero h1 .highlight-teal { color: var(--accent-teal); }
+    .hero h1 .highlight-gold { color: var(--accent-gold); }
+
+    .hero-subtitle {
+      font-size: clamp(15px, 1.6vw, 18px);
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-weight: 400;
+    }
+
+    .hero-brands {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-brand-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-brand-item .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero-brand-item .dot.red { background: var(--accent-red); }
+    .hero-brand-item .dot.teal { background: var(--accent-teal); }
+    .hero-brand-item .dot.gold { background: var(--accent-gold); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-transform: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-red), var(--accent-orange));
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(220, 38, 38, 0.45);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-white);
+      border: 2px solid var(--text-gray);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-white);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero-bridge {
+      max-width: 640px;
+      margin: 0 auto 28px;
+      padding: 16px 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+    }
+
+    .hero-bridge p {
+      font-size: 14px;
+      color: var(--text-gray);
+      line-height: 1.6;
+    }
+
+    .hero-bridge strong {
+      color: var(--text-white);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: float 2.5s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .scroll-indicator .line {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, var(--text-muted), transparent);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    /* ============ SECTIONS COMMON ============ */
+    section {
+      padding: 70px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 4.5vw, 52px);
+      color: var(--text-white);
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ============ SECTION 1: CABAPUÃ ============ */
+    #cabapua {
+      background: var(--bg-secondary);
+    }
+
+    #cabapua .section-tag { color: var(--accent-red); }
+    #cabapua .section-title { color: var(--accent-red); }
+
+    .badge-tag {
+      display: inline-block;
+      padding: 6px 18px;
+      border: 1px solid var(--accent-red);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-red);
+      margin-bottom: 16px;
+    }
+
+    .section-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .grid-modalidades {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card-modalidade {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      text-align: center;
+      transition: all var(--transition);
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-modalidade::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent-red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .card-modalidade:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card-modalidade:hover {
+      border-color: rgba(220, 38, 38, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(220, 38, 38, 0.15);
+    }
+
+    .card-modalidade h3 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      color: var(--text-white);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .card-modalidade p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .agendamento-box {
+      margin-top: 52px;
+      padding: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .agendamento-box h3 {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      color: var(--accent-red);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .agendamento-box p {
+      font-size: 16px;
+      color: var(--text-gray);
+      max-width: 560px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .btn-whatsapp-agendar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-whatsapp-agendar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+    }
+
+    .subtitle-section {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      color: var(--text-white);
+      letter-spacing: 1px;
+      margin: 48px 0 24px;
+      text-align: center;
+    }
+
+    .primary-turmas {
+      margin-bottom: 0;
+    }
+
+    /* ============ SECTION 2: SELENE ============ */
+    #selene {
+      background: var(--bg-primary);
+    }
+
+    #selene .section-tag { color: var(--accent-teal); }
+    #selene .section-title { color: var(--accent-teal); }
+
+    .selene-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .selene-image {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-card);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .selene-content h3 {
+      font-size: 28px;
+      color: var(--text-white);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .selene-content p {
+      font-size: 16px;
+      color: var(--text-gray);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .benefits-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 15px;
+      color: var(--text-gray);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .benefits-list li:last-child {
+      border-bottom: none;
+    }
+
+    .benefits-list li i {
+      color: var(--accent-teal);
+      font-size: 16px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ============ SECTION 3: URACAN ============ */
+    #uracan {
+      background: var(--bg-secondary);
+    }
+
+    #uracan .section-tag { color: var(--accent-gold); }
+    #uracan .section-title { color: var(--accent-gold); }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--bg-card);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-subtle);
+      transition: all var(--transition);
+    }
+
+    .gallery-item:hover {
+      border-color: rgba(234, 179, 8, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(234, 179, 8, 0.1);
+    }
+
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-white);
+      background: rgba(0,0,0,0.6);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(4px);
+    }
+
+    .gallery-item .gallery-label span {
+      color: var(--accent-gold);
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      max-width: 320px;
+      line-height: 1.7;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-gray);
+      transition: all var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--accent-red);
+      border-color: var(--accent-red);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .footer h4 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-white);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--text-white);
+    }
+
+    .footer-contact p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-contact i {
+      width: 16px;
+      color: var(--accent-red);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-bottom a {
+      color: var(--accent-red);
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============ TIMELINE BAR ============ */
+    .timeline-bar {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      padding: 14px 0;
+      text-align: center;
+    }
+
+    .timeline-bar p {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .timeline-bar span { font-weight: 600; }
+    .timeline-bar .t-red { color: var(--accent-red); }
+    .timeline-bar .t-teal { color: var(--accent-teal); }
+    .timeline-bar .t-gold { color: var(--accent-gold); }
+
+    /* ============ NEUROEVAL ============ */
+    .neuroeval-section {
+      padding: 20px 0 80px;
+      background: var(--bg-primary);
+    }
+
+    .neuroeval-card {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 46px 32px;
+      text-align: center;
+      border: 2px solid var(--neuro-gold);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #24143a 0%, #1a0f2b 55%, #12091f 100%);
+      box-shadow: 0 14px 40px rgba(118, 75, 162, 0.28);
+    }
+
+    /* brilho suave no canto */
+    .neuroeval-card::after {
+      content: '';
+      position: absolute;
+      top: -140px;
+      right: -120px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, rgba(142, 68, 173, 0.10) 45%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .neuroeval-badge {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 7px 18px;
+      border: 1px solid var(--neuro-gold);
+      border-radius: 30px;
+      background: rgba(212, 175, 55, 0.14);
+      color: var(--neuro-gold-light);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .neuroeval-title {
+      margin: 0 0 16px;
+      font-family: var(--font-heading);
+      font-size: 2.3rem;
+      line-height: 1.1;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+    }
+
+    .neuroeval-title span { color: var(--neuro-gold-light); }
+
+    .neuroeval-desc {
+      max-width: 850px;
+      margin: 0 auto 30px;
+      color: #e0d0e0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .neuroeval-desc strong { color: #ffffff; }
+
+    .neuroeval-btn {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      padding: 16px 36px;
+      border: 1px solid #f1c40f;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 45%, #d4af37 100%);
+      background-size: 160% 160%;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 8px 22px rgba(142, 68, 173, 0.42);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.4s ease;
+    }
+
+    .neuroeval-btn:hover,
+    .neuroeval-btn:focus-visible {
+      background-position: 100% 50%;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
+      transform: translateY(-2px) scale(1.04);
+      color: #ffffff;
+    }
+
+    .neuroeval-note {
+      margin: 22px auto 0;
+      max-width: 720px;
+      color: rgba(224, 208, 224, 0.7);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* ============ GOOGLE TRANSLATE ============ */
+    #google_translate_element {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 24px 0;
+    }
+
+    /* ============ WA FLOAT ============ */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      transition: all var(--transition);
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      .nav-menu ul {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-nav);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .nav-menu ul.open {
+        display: flex;
+      }
+
+      .btn-whatsapp-nav {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .selene-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .neuroeval-card {
+        padding: 34px 20px;
+      }
+
+      .neuroeval-title {
+        font-size: 1.85rem;
+      }
+
+      .neuroeval-desc {
+        font-size: 1rem;
+      }
+
+      .neuroeval-btn {
+        display: block;
+        width: 100%;
+        padding: 16px 18px;
+        font-size: 0.95rem;
+      }
+
+      .selene-image {
+        order: -1;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero h1 {
+        letter-spacing: 2px;
+      }
+
+      .hero-brands {
+        gap: 20px;
+      }
+
+      .arts-grid, .grid-modalidades {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+
+      .agendamento-box {
+        padding: 28px 20px;
+      }
+
+      .agendamento-box h3 {
+        font-size: 24px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-logo {
+        max-width: 180px;
+        margin-bottom: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER / NAV UNIFICADO ============ -->
+  <header class="main-header" id="navbar">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html"><img src="logo-ctm-cabapua.jpg" alt="C.T.M. Cabapuã Brasil" class="logo-img" style="height:44px;width:44px;border-radius:50%;object-fit:cover;" /></a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-menu" id="navLinks">
+        <ul>
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="ctm.html">Artes Marciais</a></li>
+          <li><a href="selene.html">Clínica Selene</a></li>
+          <li><a href="uracan.html">Uracan Wear</a></li>
+          <li><a href="acervo.html">Livros & Certificados</a></li>
+          <li><a href="eventos.html">Eventos & Lutas</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/5511965962262" class="btn-whatsapp-nav" target="_blank" rel="noopener noreferrer">Atendimento</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="hero-bg.jpg" alt="Treino C.T.M. Cabapuã - Artes Marciais" class="hero-bg-img" />
+    </div>
+    <div class="hero-pattern"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <img src="logo-ctm-cabapua.jpg" alt="C.T.M. Cabapuã Brasil" class="hero-logo" />
+      <div class="hero-badge">GUARULHOS • C.T.M. CABAPUÃ BRASIL</div>
+      <h1>
+        Artes Marciais,<br />
+        <span class="highlight-red">Saúde Integrativa</span><br />
+        <span class="highlight-gold">e Vestuário</span> de Alta Performance<br />
+        em um Só Lugar.
+      </h1>
+      <p class="hero-subtitle">
+        Treinamento artesanal sob o método do <strong>Mestre Célio D'Lua</strong>. Turmas presenciais, Aulas Particulares VIP e atendimento na Clínica Selene. Aceitamos <strong>TotalPass</strong> e <strong>Wellhub</strong>.
+      </p>
+      <div class="trust-badges">
+        <span class="trust-badge"><i class="fas fa-check-circle"></i> TotalPass</span>
+        <span class="trust-badge"><i class="fas fa-check-circle"></i> Wellhub</span>
+        <span class="trust-badge"><i class="fas fa-shield-alt"></i> Ambiente Seguro</span>
+      </div>
+      <div class="hero-bridge">
+        <p><strong>Três marcas fortes. Um ecossistema completo.</strong><br />Seja para treinar uma arte marcial, cuidar do corpo e da mente, ou vestir a paixão pela luta — nossas portas estão abertas para alunos da academia e para toda a comunidade.</p>
+      </div>
+      <div class="hero-cta">
+        <a href="#cabapua" class="btn btn-primary"><i class="fas fa-dumbbell"></i> Sou Aluno TotalPass / Wellhub — Ver Horários</a>
+        <a href="#selene" class="btn btn-outline"><i class="fas fa-brain"></i> Clínica Selene — Agendar Avaliação Terapêutica</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Role</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 1: CABAPUÃ ============ -->
+  <section id="cabapua">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge-tag">Mestre Célio D'Lua</span>
+        <h2 class="section-title">C.T.M. Cabapuã <span style="font-size: 0.5em; color: var(--text-muted); font-family: var(--font-body); font-weight: 400; letter-spacing: 0;">— Desde 2018</span></h2>
+        <p class="section-desc">
+          Desde 2018 formando praticantes, promovendo disciplina e oferecendo o mais alto nível de ensino em artes marciais em Guarulhos.
+        </p>
+      </div>
+
+      <img src="cabapua-artes-marciais.jpg" alt="Treinos C.T.M. Cabapuã - Artes Marciais" class="section-banner-img reveal" />
+
+      <h3 class="subtitle-section reveal">Turmas Regulares <span style="font-size: 0.9rem; font-weight: 400; color: var(--text-muted);">(Passe o mouse ou toque para ver os horários)</span></h3>
+
+      <div class="grid-modalidades primary-turmas">
+        <div class="card-modalidade-flip reveal reveal-delay-1">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Capoeira</h3>
+              <p>Movimento, música, ritmo e expressão cultural afro-brasileira.</p>
+              <span class="hint-flip">Ver Horários</span>
+            </div>
+            <div class="card-back">
+              <h4>Horários Capoeira</h4>
+              <p><strong>Adulto:</strong> Ter / Qui 20h00 | Sáb 13h00</p>
+              <p><strong>Infantil:</strong> Ter / Qui 19h00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-modalidade-flip reveal reveal-delay-1">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Muay Thai</h3>
+              <p>A arte das 8 armas: punhos, cotovelos, joelhos e canelas.</p>
+              <span class="hint-flip">Ver Horários</span>
+            </div>
+            <div class="card-back">
+              <h4>Horários Muay Thai</h4>
+              <p><strong>Seg / Qua:</strong> 19h00</p>
+              <p><strong>Ter / Qui:</strong> 16h00</p>
+              <p><strong>Sábado:</strong> 11h30</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-modalidade-flip reveal reveal-delay-2">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Jiu-Jitsu</h3>
+              <p>Técnica de solo, alavancas e controle. O suave que domina o forte.</p>
+              <span class="hint-flip">Ver Horários</span>
+            </div>
+            <div class="card-back">
+              <h4>Horários Jiu-Jitsu</h4>
+              <p><strong>Seg / Qua:</strong> 20h30</p>
+              <p><strong>Sábado:</strong> 10h00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-modalidade-flip reveal reveal-delay-2">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Hapkido</h3>
+              <p>Arte marcial coreana de defesa pessoal, torções e imobilização.</p>
+              <span class="hint-flip">Ver Horários</span>
+            </div>
+            <div class="card-back">
+              <h4>Horários Hapkido</h4>
+              <p><strong>Ter / Qui:</strong> 21h00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="agendamento-box card-vip reveal">
+        <h3>Agendamento de Aulas Particulares VIP</h3>
+        <p>Treinamento individualizado com flexibilidade de horários sob consulta.</p>
+        <p><strong>Especialidades exclusivas VIP:</strong> Boxe, Kickboxing, Ninjutsu / Kenjutsu e Grab Punch (Defesa Pessoal).</p>
+        <p class="vip-note">Observação: Todas as modalidades de turma (Capoeira, Muay Thai, Jiu-Jitsu e Hapkido) também estão disponíveis no formato de Aula Particular VIP.</p>
+        <a href="https://wa.me/5511965962262?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20aula%20de%20apresenta%C3%A7%C3%A3o%20no%20C.T.M.%20Cabapu%C3%A3%20para%20conhecer%20a%20metodologia." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-agendar" style="margin-top: 12px;">
+          Agendar Aula de Apresentação via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 2: SELENE ============ -->
+  <section id="selene">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag"><i class="fas fa-leaf"></i> &nbsp; Cuidado & Bem-Estar</div>
+        <h2 class="section-title">Clínica Selene <span style="font-size: 0.5em; color: var(--text-muted); font-family: var(--font-body); font-weight: 400; letter-spacing: 0;">— Fundada em 2023</span></h2>
+        <p class="section-desc">
+          Fundada em 2023, unimos o cuidado físico ao equilíbrio mental e emocional.
+        </p>
+      </div>
+
+      <div class="selene-grid">
+        <div class="selene-image reveal">
+          <img src="clinica-selene.jpg" alt="Clínica Selene - Terapias Integrativas e Saúde" class="selene-img" />
+        </div>
+        <div class="selene-content reveal reveal-delay-2">
+          <h3>Terapias que transformam</h3>
+          <p>
+            Cuidado físico (Shiatsu, Massoterapia e Quiropraxia) aliado ao equilíbrio mental e emocional (Psicanálise, TCC e Hipnose Terapêutica).
+          </p>
+          <ul class="benefits-list">
+            <li><i class="fas fa-check-circle"></i> Shiatsu, Massoterapia e Quiropraxia</li>
+            <li><i class="fas fa-check-circle"></i> Psicanálise, TCC e Hipnose Terapêutica</li>
+            <li><i class="fas fa-check-circle"></i> Ventosaterapia e liberação miofascial</li>
+            <li><i class="fas fa-check-circle"></i> Recuperação pós-treino e alívio de dores</li>
+          </ul>
+          <a href="https://wa.me/5511965962262?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20inicial%20na%20Cl%C3%ADnica%20Selene." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Agendar Avaliação Inicial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 2.1: NEUROEVAL ============ -->
+  <section id="neuroeval" class="neuroeval-section">
+    <div class="container">
+      <div class="neuroeval-card reveal">
+        <span class="neuroeval-badge">🧠 Inovação e Precisão em Saúde Mental</span>
+
+        <h2 class="neuroeval-title">Neuroeval: Avaliação Neuropsicológica <span>Inteligente e Completa</span></h2>
+
+        <p class="neuroeval-desc">
+          Quer compreender a fundo o funcionamento cognitivo e comportamental? Conheça o <strong>Neuroeval</strong>, nosso sistema avançado de avaliação estruturado rigorosamente sob os ditames científicos e diagnósticos do <strong>DSM-5</strong>. Uma ferramenta completa, inteligente e segura para apoiar o seu autoconhecimento e desenvolvimento na Clínica Selene.
+        </p>
+
+        <a class="neuroeval-btn" href="https://clinicaselene.com.br/neuroeval" target="_blank" rel="noopener noreferrer" aria-label="Fazer o teste Neuroeval na Clínica Selene">
+          🔍 Fazer o Teste Neuroeval Agora
+        </a>
+
+        <p class="neuroeval-note">Ferramenta de psicoeducação e triagem. Não substitui avaliação clínica profissional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEÇÃO 3: URACAN ============ -->
+  <section id="uracan">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag"><img src="logo.png" alt="Uracan Fight Wear" class="uracan-ctm-icon" /> &nbsp; Estilo & Atitude</div>
+        <h2 class="section-title">Uracan Fight Wear <span style="font-size: 0.5em; color: var(--text-muted); font-family: var(--font-body); font-weight: 400; letter-spacing: 0;">— Em operação desde 2025</span></h2>
+        <p class="section-desc">
+          Idealizada em 2019 e em pleno funcionamento desde 2025, a marca oficial de vestuário e fardamentos personalizados para quem vive a luta dentro e fora do tatame.
+        </p>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item reveal reveal-delay-1">
+          <img src="uracan-camiseta-premium.png" alt="Camiseta Premium Uracan Fight Wear" class="gallery-img" />
+          <div class="gallery-label">Camisetas <span>Premium</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2">
+          <img src="uracan-fardamentos.png" alt="Estampa exclusiva Uracan Fight Wear" class="gallery-img" />
+          <div class="gallery-label">Fardamentos <span>Personalizados</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-3">
+          <img src="uracan-estamparia.png" alt="Fardamento completo para equipes Uracan" class="gallery-img" />
+          <div class="gallery-label">Estamparia <span>Sob Medida</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-4">
+          <img src="uracan-colecao.png" alt="Processo de estamparia Uracan Fight Wear" class="gallery-img" />
+          <div class="gallery-label">Coleção <span>Limitada</span></div>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="https://wa.me/5511965962262?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20na%20Uracan%20Fight%20Wear" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Solicitar Orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANIVERSARIANTES DO MÊS ============ -->
+  <section class="aniversariantes-section" id="aniversariantes">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge-tag" style="border-color:var(--accent-gold);color:var(--accent-gold);"><i class="fas fa-birthday-cake"></i> ANIVERSARIANTES</span>
+        <h2 class="section-title" style="color:var(--accent-gold);">Aniversariantes do Mês</h2>
+        <p class="section-desc">Homenagem aos alunos e membros do ecossistema Cabapuã que fazem aniversário neste mês.</p>
+      </div>
+      <div class="aniversariantes-grid" id="aniversariantes-grid">
+        <div class="aniversariantes-placeholder">
+          <i class="fas fa-spinner fa-spin"></i> Carregando...
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contato">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 10px;">
+            <img src="logo-ctm-cabapua.jpg" alt="C.T.M. Cabapuã Brasil" class="logo-img" style="height:56px;width:56px;border-radius:50%;object-fit:cover;" />
+            <span class="logo-text">C.T.M. <span>Cabapuã</span></span>
+          </a>
+          <p>Um ecossistema que une artes marciais, saúde integrativa e moda esportiva. Mais que uma academia, um estilo de vida.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/roscelio" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/ctcabapua" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/@cabapuabrasil" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@ctcabapua" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Navegue</h4>
+          <ul class="footer-links">
+            <li><a href="#cabapua">C.T.M. Cabapuã</a></li>
+            <li><a href="#selene">Clínica Selene</a></li>
+            <li><a href="#uracan">Uracan Fight Wear</a></li>
+            <li><a href="#hero">Início</a></li>
+            <li><a href="eventos.html">Eventos & Lutas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Guarulhos / SP</p>
+          <p><i class="fas fa-phone"></i> (11) 96596-2262</p>
+          <p><i class="fas fa-envelope"></i> cabapuabrasil@gmail.com</p>
+          <p><i class="fab fa-whatsapp"></i> WhatsApp: (11) 96596-2262</p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:24px 0;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);margin-bottom:20px;">
+                <div class="sib-form" style="background:transparent;text-align:left;flex:1;min-width:280px;max-width:460px;">
+          <div id="sib-form-container" class="sib-form-container">
+            <div id="error-message" class="sib-form-message-panel" style="font-family:Helvetica,sans-serif;font-size:14px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:6px;max-width:460px;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">Sua assinatura não pôde ser validada.</span>
+              </div>
+            </div>
+            <div id="success-message" class="sib-form-message-panel" style="font-family:Helvetica,sans-serif;font-size:14px;text-align:left;color:#085229;background-color:#e7faf0;border-color:#13ce66;border-radius:6px;max-width:460px;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">Você fez sua assinatura com sucesso.</span>
+              </div>
+            </div>
+            <div id="sib-container" class="sib-container sib-container--horizontal" style="background:transparent;padding:0;margin:0;">
+              <form id="sib-form" method="POST" action="https://e9878ea3.sibforms.com/serve/MUIFAHjvoLF2HBObMMr8psED0iiJtZg1X7em7uJixPlNQXLNNUzBUFy9qFQ1jEkggV84CXFiKVeAHJYtREmwZjLcSZE6HNaAZK_qrzb7yvjosJvtZnFwrdOmomzLNwAy9NwzLJqO5B7ATArrLPCDlhixyO5mbgocu8dI_wyKVtLtzdnVLW0ynF4eoQD2oBtKmFw6D43i8t2tFfZjZg==" data-type="subscription" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;">
+                <label for="EMAIL" style="font-size:14px;color:var(--text-muted);margin-right:4px;">Receba novidades:</label>
+                <div class="sib-input" style="flex:1;min-width:180px;">
+                  <div class="form__entry" style="position:relative;">
+                    <input type="email" class="input" id="EMAIL" name="EMAIL" placeholder="Seu melhor e-mail" required data-required="true" autocomplete="off" style="width:100%;padding:10px 14px;border:1px solid var(--border-subtle);border-radius:50px;background:#222;color:#fff;box-sizing:border-box;font-size:13px;" />
+                    <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:12px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+                  </div>
+                </div>
+                <button type="submit" class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" style="background-color:var(--accent-gold);color:#000;padding:10px 20px;border:none;border-radius:50px;font-weight:bold;cursor:pointer;font-size:13px;line-height:1;min-height:0;">
+                  <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;">
+                    <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 10.423-28.618 15.822-59.097 15.822-91.096 0-106.23-86.408-192.636-192.636-192.636S64.982 148.738 64.982 254.968c0 31.999 5.399 62.478 15.822 91.096 2.877 5.715.878 12.675-4.663 15.874l-20.823 12.022c-5.541 3.199-7.54 10.159-4.663 15.874 5.25 9.088 15.26 14.702 25.992 14.702h2.762c1.31 0 2.626-.084 3.937-.248 7.816-1.216 15.489-3.131 22.833-5.673 9.905-3.463 20.801-5.268 31.872-5.268h24.156c11.07 0 21.967 1.805 31.872 5.268 7.344 2.542 15.017 4.457 22.833 5.673 1.311.164 2.627.248 3.937.248h2.762c10.732 0 20.742-5.614 25.992-14.702 2.877-5.715.878-12.675-4.663-15.874zM256.016 95.104c-88.211 0-159.744 71.533-159.744 159.744 0 57.274 30.203 107.4 75.465 135.875v-19.486c0-22.976 8.408-44.843 22.303-61.678l8.448-10.248-4.202-12.867c-9.703-29.702-15.322-60.275-15.322-91.399 0-68.052 55.357-123.409 123.409-123.409s123.409 55.357 123.409 123.409c0 31.124-5.619 61.697-15.322 91.399l-4.202 12.867 8.448 10.248c13.895 16.831 22.303 38.702 22.303 61.678v19.486c45.262-28.475 75.465-78.601 75.465-135.875 0-88.211-71.533-159.744-159.744-159.744z"/>
+                  </svg>
+                  <span class="sib-form-block__button-text">Assinar</span>
+                </button>
+                <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+                <input type="hidden" name="locale" value="pt">
+              </form>
+            </div>
+          </div>
+        </div>
+        <a href="https://whatsapp.com/channel/0029VbCqieN1dAvyyLTeea2K" target="_blank" rel="noopener noreferrer" style="color:#25D366;text-decoration:none;font-weight:bold;font-size:14px;">📱 Siga nosso canal no WhatsApp</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 C.T.M. Cabapuã Brasil. Todos os direitos reservados.</p>
+        <p>Feito com <i class="fas fa-heart" style="color: var(--accent-red);"></i> para a arte marcial</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Google Translate Plugin -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'pt',
+        includedLanguages: 'en,pl,fr,es,ja,zh',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- Fim do Plugin Google Translate -->
+
+  <div class="timeline-bar">
+    <div class="container">
+      <p><span class="t-red">C.T.M. Cabapuã desde 2018</span> &nbsp;|&nbsp; <span class="t-teal">Clínica Selene desde 2023</span> &nbsp;|&nbsp; <span class="t-gold">Uracan Wear desde 2025</span></p>
+    </div>
+  </div>
+
+  <!-- ============ WHATSAPP FLOAT ============ -->
+  <a href="https://wa.me/5511965962262?text=Ol%C3%A1!%20Acessei%20o%20site%20cabapua.com.br%20e%20gostaria%20de%20agendar%20uma%20aula%20de%20apresenta%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    (function() {
+      // Header toggle (mobile)
+      const toggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navLinks');
+
+      if (toggle && navMenu) {
+        toggle.addEventListener('click', function() {
+          const menu = navMenu.querySelector('ul');
+          if (menu) menu.classList.toggle('open');
+          const icon = toggle.querySelector('i');
+          if (menu && menu.classList.contains('open')) {
+            icon.className = 'fas fa-times';
+          } else {
+            icon.className = 'fas fa-bars';
+          }
+        });
+
+        navMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            const menu = navMenu.querySelector('ul');
+            if (menu) menu.classList.remove('open');
+            const icon = toggle.querySelector('i');
+            icon.className = 'fas fa-bars';
+          });
+        });
+      }
+
+      // Header scroll effect
+      const header = document.getElementById('navbar');
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+
+      // Scroll Reveal (Intersection Observer)
+      const revealElements = document.querySelectorAll('.reveal');
+
+      if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(function(el) {
+          observer.observe(el);
+        });
+      } else {
+        revealElements.forEach(function(el) {
+          el.classList.add('visible');
+        });
+      }
+
+      // Aniversariantes - Carrega do aniversariantes.csv
+      (function() {
+        var grid = document.getElementById('aniversariantes-grid');
+        if (!grid) return;
+
+        var MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
+        var MENSAGENS_PADRAO = [
+          'Parabéns! Exemplo de dedicação e disciplina no C.T.M. Cabapuã.',
+          'Desejamos um dia repleto de energia, saúde e alegria.',
+          'Que seu novo ano de vida seja cheio de conquistas no tatame!',
+          'Axé, força e saúde — é o que desejamos neste dia especial.',
+          'Celebrando a vida de quem faz parte da nossa família Cabapuã.',
+          'Que a garra do guerreiro e a serenidade do mestre estejam com você.'
+        ];
+
+        function parseCSV(texto) {
+          var linhas = texto.split(/\r?\n/).filter(function(l) { return l.trim(); });
+          var cabecalho = linhas[0].split(';').map(function(c) { return c.trim(); });
+          var dados = [];
+          for (var i = 1; i < linhas.length; i++) {
+            var cols = linhas[i].split(';');
+            var obj = {};
+            for (var j = 0; j < cabecalho.length; j++) {
+              obj[cabecalho[j]] = (cols[j] || '').trim();
+            }
+            dados.push(obj);
+          }
+          return dados;
+        }
+
+        function fotoDoAluno(aluno) {
+          if (aluno.ID_Foto_Drive) {
+            var foto = aluno.ID_Foto_Drive;
+            // Só aceita URLs https (evita javascript:/data: e outros esquemas)
+            if (foto.indexOf('https://') === 0) {
+              return foto;
+            }
+            return 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(foto) + '&sz=w400';
+          }
+          return 'https://ui-avatars.com/api/?name=' + encodeURIComponent(aluno.nome) + '&background=EAB308&color=111111&bold=true&size=200';
+        }
+
+        fetch('aniversariantes.csv')
+          .then(function(r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.text();
+          })
+          .then(function(texto) {
+            var alunos = parseCSV(texto);
+            var hoje = new Date();
+            var mesAtual = hoje.getMonth() + 1;
+            var mesAtualStr = (mesAtual < 10 ? '0' : '') + mesAtual;
+            var doMes = [];
+
+            alunos.forEach(function(a, idx) {
+              if (!a.Nome || !a.DataNascimento) return;
+              // Aceita DD/MM ou DD/MM/AAAA sem depender de new Date() (evita falhas no Safari/Firefox)
+              var m = String(a.DataNascimento).trim().match(/^(\d{2})\/(\d{2})(\/\d{2,4})?$/);
+              if (!m) return;
+              if (m[2] === mesAtualStr) {
+                var dia = parseInt(m[1], 10);
+                doMes.push({
+                  nome: a.Nome,
+                  modalidade: a.Modalidade || '',
+                  ID_Foto_Drive: a.ID_Foto_Drive || '',
+                  dia: dia,
+                  mensagem: a.Mensagem || MENSAGENS_PADRAO[idx % MENSAGENS_PADRAO.length]
+                });
+              }
+            });
+
+            doMes.sort(function(x, y) { return x.dia - y.dia; });
+
+            if (doMes.length > 0) {
+              grid.innerHTML = '';
+              doMes.forEach(function(aluno) {
+                var card = document.createElement('div');
+                card.className = 'aniversariante-card reveal';
+
+                var fotoWrap = document.createElement('div');
+                fotoWrap.className = 'aniversariante-foto-wrap';
+
+                var foto = document.createElement('img');
+                foto.src = fotoDoAluno(aluno);
+                foto.alt = aluno.nome;
+                foto.className = 'aniversariante-foto';
+                foto.loading = 'lazy';
+
+                var diaBadge = document.createElement('span');
+                diaBadge.className = 'aniv-dia-badge';
+                diaBadge.textContent = 'Dia ' + aluno.dia;
+
+                fotoWrap.appendChild(foto);
+                fotoWrap.appendChild(diaBadge);
+
+                var nome = document.createElement('h3');
+                nome.textContent = aluno.nome;
+
+                card.appendChild(fotoWrap);
+                card.appendChild(nome);
+
+                if (aluno.modalidade) {
+                  var modalidade = document.createElement('span');
+                  modalidade.className = 'aniv-modalidade';
+                  modalidade.textContent = aluno.modalidade;
+                  card.appendChild(modalidade);
+                }
+
+                var mensagem = document.createElement('p');
+                mensagem.className = 'aniv-mensagem';
+                mensagem.textContent = aluno.mensagem;
+                card.appendChild(mensagem);
+
+                grid.appendChild(card);
+              });
+              setTimeout(function() {
+                grid.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+              }, 100);
+            } else {
+              grid.innerHTML = '<div class="aniversariantes-placeholder"><i class="fas fa-birthday-cake"></i> Nenhum aniversariante este mês.</div>';
+            }
+          })
+          .catch(function() {
+            grid.innerHTML = '<div class="aniversariantes-placeholder"><i class="fas fa-birthday-cake"></i> Nenhum aniversariante este mês.</div>';
+          });
+      })();
+    })();
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos, Lutas e Seminários | C.T.M. Cabapuã Brasil</title>
+  <meta name="description" content="Calendário oficial de campeonatos, exames de faixa e seminários do Centro de Treinamento Marcial Cabapuã em Guarulhos. Veja também as coberturas de lutas no YouTube." />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="favicon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .events-section { background: var(--bg-secondary); padding: 60px 0 80px; }
+    .subtitle-section { font-family: var(--font-heading); font-size: 28px; color: var(--text-white); letter-spacing: 1px; margin: 48px 0 24px; text-align: center; }
+    .events-sub { text-align: center; color: var(--text-gray); font-size: 16px; margin: -16px auto 32px; max-width: 640px; line-height: 1.6; }
+    .section-divider { border: 1px solid var(--border-subtle); margin: 60px 0; }
+
+    /* ===== SEÇÃO 1: CARROSSEL DIÁRIO ===== */
+    .daily-carousel-section { background: var(--bg-primary); padding: 60px 0; }
+    .carousel-wrapper { max-width: 1000px; margin: 0 auto; position: relative; }
+    .carousel-viewport { overflow: hidden; border-radius: var(--radius); border: 2px solid var(--border-subtle); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .carousel-slides { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .slide-item { flex: 0 0 100%; position: relative; }
+    .slide-item img { width: 100%; height: auto; display: block; }
+    .slide-caption { position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.75); color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 14px; backdrop-filter: blur(4px); }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: #fff; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 5; transition: background 0.2s; backdrop-filter: blur(4px); }
+    .carousel-btn:hover { background: rgba(0,0,0,0.85); }
+    .carousel-btn.prev { left: 12px; }
+    .carousel-btn.next { right: 12px; }
+    .carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+    .carousel-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(148,163,184,0.35); border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+    .carousel-dot.active { background: var(--accent-gold); transform: scale(1.25); }
+
+    /* ===== SEÇÃO 2: DESTAQUE DO MÊS ===== */
+    .featured-event-section { background: var(--bg-secondary); padding: 70px 0; }
+    .container-featured { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+    .featured-image { flex: 1 1 450px; position: relative; }
+    .featured-image img { width: 100%; border-radius: var(--radius); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+    .urgency-badge { position: absolute; top: 15px; right: 15px; background: #e53e3e; color: #fff; padding: 8px 15px; font-weight: bold; border-radius: 20px; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(229,62,62,0.5); }
+    .featured-text { flex: 1 1 450px; color: var(--text-white); }
+    .featured-text .eyebrow { color: var(--accent-teal); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+    .featured-text h2 { font-family: var(--font-heading); font-size: 40px; margin: 10px 0 20px 0; letter-spacing: 1px; }
+    .featured-text p { color: var(--text-gray); line-height: 1.6; margin-bottom: 25px; }
+    .featured-text ul { list-style: none; padding: 0; margin-bottom: 30px; color: var(--text-gray); }
+    .featured-text li { margin-bottom: 12px; }
+    .featured-text li strong { color: var(--accent-gold); }
+    .btn-whatsapp-featured { display: inline-block; background: #22c55e; color: #fff; padding: 15px 30px; font-weight: bold; text-decoration: none; border-radius: 50px; font-size: 16px; transition: opacity 0.3s; box-shadow: 0 4px 15px rgba(34,197,94,0.4); }
+    .btn-whatsapp-featured:hover { opacity: 0.9; }
+
+    /* ===== SEÇÃO 3: LINHA DO TEMPO ===== */
+    .timeline-events-section { background: var(--bg-primary); padding: 70px 0; }
+    .cards-grid { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 30px; }
+    .tl-card { flex: 1 1 450px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    .tl-card-img { position: relative; }
+    .tl-card-img img { width: 100%; height: 250px; object-fit: cover; display: block; }
+    .tl-badge { position: absolute; top: 15px; left: 15px; color: #fff; padding: 5px 12px; font-size: 12px; font-weight: bold; border-radius: 6px; }
+    .tl-badge-next { background: var(--accent-blue); }
+    .tl-badge-past { background: var(--text-muted); }
+    .tl-card-body { padding: 25px; color: var(--text-white); flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .tl-card-body h3 { font-family: var(--font-heading); font-size: 26px; letter-spacing: 1px; margin-bottom: 15px; }
+    .tl-card-body p { margin-bottom: 10px; color: var(--text-gray); }
+    .tl-card-body p strong { color: var(--accent-gold); }
+    .tl-desc { color: var(--text-muted); font-size: 14px; line-height: 1.5; margin-bottom: 20px !important; }
+    .tl-live { color: var(--accent-teal); font-weight: bold; font-size: 14px; margin-bottom: 20px !important; }
+    .btn-tl { display: block; text-align: center; padding: 12px; font-weight: bold; text-decoration: none; border-radius: 50px; transition: opacity 0.3s; }
+    .btn-tl-solid { background: #22c55e; color: #fff; }
+    .btn-tl-outline { background: transparent; border: 2px solid #22c55e; color: #22c55e; }
+    .btn-tl:hover { opacity: 0.85; }
+
+    /* ===== SEÇÃO MÍDIA ===== */
+    .media-section { background: var(--bg-secondary); padding: 60px 0 80px; }
+    .video-wrapper { max-width: 900px; margin: 0 auto; }
+    .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: var(--radius); border: 2px solid var(--border-subtle); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .video-link { text-align: center; margin-top: 20px; }
+    .video-link a { color: #ff0000; text-decoration: none; font-weight: bold; }
+
+    /* ===== SEÇÃO HOMENAGEM AO MESTRE ===== */
+    .homenagem-section { background: var(--bg-primary); padding: 80px 0; }
+    .homenagem-grid { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center; }
+    .homenagem-cartaz { flex: 1 1 360px; max-width: 420px; margin: 0 auto; }
+    .homenagem-cartaz img { width: 100%; height: auto; display: block; border-radius: var(--radius); border: 2px solid var(--accent-gold); box-shadow: 0 18px 45px rgba(0,0,0,0.55); }
+    .homenagem-texto { flex: 1 1 440px; }
+    .homenagem-eyebrow { display: inline-block; font-family: var(--font-heading); font-size: 18px; letter-spacing: 3px; color: var(--accent-gold); margin-bottom: 12px; }
+    .homenagem-texto h2 { font-family: var(--font-heading); font-size: 42px; line-height: 1.05; letter-spacing: 1px; color: var(--text-white); margin-bottom: 18px; }
+    .homenagem-sub { color: var(--accent-gold); font-weight: 600; font-size: 17px; line-height: 1.5; margin-bottom: 22px; }
+    .homenagem-texto p { color: var(--text-gray); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+    .homenagem-texto blockquote { border-left: 3px solid var(--accent-gold); padding: 8px 0 8px 18px; margin: 26px 0; color: var(--text-white); font-style: italic; background: rgba(234,179,8,0.07); border-radius: 0 8px 8px 0; }
+    .homenagem-final { color: var(--text-white) !important; font-weight: 600; font-size: 17px !important; border-top: 1px solid var(--border-subtle); padding-top: 20px; }
+    .homenagem-selo { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; background: rgba(234,179,8,0.12); border: 1px solid rgba(234,179,8,0.4); color: var(--accent-gold); padding: 10px 18px; border-radius: 50px; font-size: 14px; font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .container-featured { flex-direction: column; }
+      .featured-text h2 { font-size: 30px; }
+      .homenagem-section { padding: 56px 0; }
+      .homenagem-texto h2 { font-size: 30px; }
+      .homenagem-cartaz { max-width: 320px; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+</head>
+<body>
+  <header class="main-header" id="navbar">
+    <div class="container header-container">
+      <div class="logo"><a href="index.html"><img src="logo-ctm-cabapua.jpg" alt="C.T.M. Cabapuã Brasil" class="logo-img" style="height:44px;width:44px;border-radius:50%;object-fit:cover;" /></a></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      <nav class="nav-menu" id="navLinks">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="ctm.html">Artes Marciais</a></li>
+          <li><a href="selene.html">Clínica Selene</a></li>
+          <li><a href="uracan.html">Uracan Wear</a></li>
+          <li><a href="acervo.html">Livros & Certificados</a></li>
+          <li><a href="eventos.html" class="active">Eventos & Lutas</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/5511965962262" class="btn-whatsapp-nav" target="_blank" rel="noopener noreferrer">Atendimento</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge-tag reveal">Mestre Célio D'Lua — Desde 2018</span>
+      <h1 class="reveal reveal-delay-1">Eventos & Lutas</h1>
+      <p class="reveal reveal-delay-2">Calendário oficial de campeonatos, exames de faixa e seminários do CTM Cabapuã. Garanta sua vaga e acompanhe nossas coberturas.</p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 1: CARROSSEL DIÁRIO -->
+  <section class="daily-carousel-section">
+    <div class="container">
+      <h2 class="subtitle-section">⚡ Por Dentro do CTM: Treinos Recentes</h2>
+      <p class="events-sub">Veja a energia do nosso dia a dia nos tatames. Deslize para conferir as últimas fotos.</p>
+    </div>
+    <div class="carousel-wrapper">
+      <div class="carousel-viewport">
+        <div class="carousel-slides" id="carouselSlides">
+          <div class="slide-item">
+            <img src="img/eventos/evento-treino-capoeira-adulto.jpg" alt="Treino de Capoeira Adulto" loading="lazy" />
+            <span class="slide-caption">📸 Treino recente: Ritmo e evolução na Capoeira!</span>
+          </div>
+          <div class="slide-item">
+            <img src="img/eventos/evento-treino-muay-thai.jpg" alt="Treino de Muay Thai" loading="lazy" />
+            <span class="slide-caption">🥊 Foco total nos protetores e técnicas de combate.</span>
+          </div>
+          <div class="slide-item">
+            <img src="img/eventos/evento-treino-artes-marciais.jpg" alt="Treino de Artes Marciais" loading="lazy" />
+            <span class="slide-caption">🥋 Tradição e alinhamento: treino técnico.</span>
+          </div>
+          <div class="slide-item">
+            <img src="img/eventos/evento-treino-infantil.jpg" alt="Treino Infantil e Juvenil" loading="lazy" />
+            <span class="slide-caption">🤸‍♂️ Formando o futuro: nossa base reunida.</span>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn next" id="carouselNext" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2: ÚLTIMO DESTAQUE (CONCLUÍDO) -->
+  <section id="ctm-main-featured-section" class="featured-event-section">
+    <div class="container-featured">
+      <div class="featured-image reveal">
+        <img src="img/eventos/evento-banner-muay-thai.jpg" alt="Cartaz Oficial Graduação de Muay Thai" loading="lazy" />
+        <span class="urgency-badge" id="countdown-badge" style="background:#64748b;">✅ REALIZADO</span>
+      </div>
+      <div class="featured-text reveal reveal-delay-1">
+        <span class="eyebrow" id="featured-title-badge">Grande Sucesso</span>
+        <h2 id="featured-main-title">Graduação de Muay Thai 2026 Concluída!</h2>
+        <p id="featured-description">Mais um capítulo marcante escrito nos ringues do CTM Cabapuã Brasil. Parabéns a todos os atletas que demonstraram garra, técnica e alcançaram suas novas graduações!</p>
+        <div id="featured-info-table" style="display:none;">
+          <ul>
+            <li><strong>📅 Data:</strong> 14 de Agosto de 2026 (Sexta-feira)</li>
+            <li><strong>⏰ Horário:</strong> Às 20:00h</li>
+            <li><strong>📍 Local:</strong> Centro de Treinamento Marcial Cabapuã</li>
+            <li><strong>🥋 Comando:</strong> Prof. Célio (13º Kru de Muay Thai)</li>
+          </ul>
+        </div>
+        <a id="featured-action-btn" href="https://www.youtube.com/@cabapuabrasil" target="_blank" rel="noopener noreferrer" aria-label="Ver cobertura da graduação de Muay Thai no canal do YouTube" class="btn-whatsapp-featured" style="background:transparent;border:2px solid #22c55e;color:#22c55e;box-shadow:none;">Ver Cobertura Completa 📸</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: LINHA DO TEMPO -->
+  <section class="timeline-events-section">
+    <div class="container">
+      <h2 class="subtitle-section">Linha do Tempo</h2>
+      <p class="events-sub">Do próximo desafio à prova social da nossa história.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="tl-card reveal">
+        <div class="tl-card-img">
+          <img src="img/eventos/evento-banner-capoeira.jpg" alt="Graduação de Capoeira" loading="lazy" />
+          <span class="tl-badge tl-badge-past">Edição 2026 Realizada</span>
+        </div>
+        <div class="tl-card-body">
+          <div>
+            <h3>Graduação de Capoeira — Batizado e Troca de Cordas</h3>
+            <p><strong>📅 Data:</strong> 17/10/2026 (Sábado) às 16:00h</p>
+            <p><strong>📍 Local:</strong> CTM Cabapuã Brasil</p>
+            <p class="tl-live">📺 Cobertura disponível no nosso <a href="https://www.youtube.com/@cabapuabrasil" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Canal do YouTube</a>!</p>
+          </div>
+          <a href="https://wa.me/5511965962262?text=Quero%20saber%20sobre%20a%20pr%C3%B3xima%20edi%C3%A7%C3%A3o%20do%20Batizado%20de%20Capoeira!" target="_blank" rel="noopener noreferrer" aria-label="Perguntar sobre a próxima edição do Batizado de Capoeira via WhatsApp" class="btn-tl btn-tl-solid">Próxima Edição 🥋</a>
+        </div>
+      </div>
+
+      <div class="tl-card reveal reveal-delay-1">
+        <div class="tl-card-img">
+          <img src="img/eventos/evento-marivan-jiujitsu.jpg" alt="Equipe Marivan Jiu-Jitsu Reunida" loading="lazy" />
+          <span class="tl-badge tl-badge-past">Evento Realizado</span>
+        </div>
+        <div class="tl-card-body">
+          <div>
+            <h3>Graduação Oficial de Jiu-Jitsu</h3>
+            <p><strong>🥋 Equipe:</strong> Marivan Jiu-Jitsu</p>
+            <p><strong>📍 Local:</strong> Palácio das Lutas</p>
+            <p class="tl-desc">Celebração e reconhecimento da nossa equipe no tatame geral. Parabéns a todos os novos graduados pelos certificados conquistados com suor e técnica!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="events-sub" style="margin-top:36px;">📅 As próximas datas de 2027 serão divulgadas aqui, no grupo VIP e no canal oficial do WhatsApp.</p>
+  </section>
+
+  <!-- SEÇÃO MÍDIA -->
+  <section class="media-section">
+    <div class="container">
+      <h2 class="subtitle-section">Nossas Lutas & Coberturas</h2>
+      <p class="events-sub">Acompanhe os melhores momentos dos nossos atletas em combates e treinos.</p>
+
+      <div class="video-wrapper">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/R1R-JVCsBgQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="video-link">
+          <a href="https://www.youtube.com/@cabapuabrasil" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;background-color:#FF0000;color:#ffffff;padding:12px 26px;border-radius:50px;font-weight:bold;font-size:15px;box-shadow:0 4px 10px rgba(255,0,0,0.35);transition:opacity 0.2s;"><i class="fab fa-youtube" style="font-size:20px;"></i> Inscreva-se no canal oficial</a>
+        </p>
+      </div>
+
+      <h3 class="subtitle-section" style="font-size:24px;margin-top:70px;">A Construção do CTM Cabapuã Brasil</h3>
+      <p class="events-sub">Acompanhe o início da construção do nosso espaço, do zero até virar realidade.</p>
+      <div class="video-wrapper" style="max-width:340px;">
+        <div class="video-container" style="padding-bottom:177.78%;">
+          <iframe src="https://www.youtube.com/embed/SOjiiG9oWrw" title="YouTube Shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO HOMENAGEM: 22 DE NOVEMBRO -->
+  <section id="homenagem" class="homenagem-section">
+    <div class="homenagem-grid">
+      <div class="homenagem-cartaz reveal">
+        <img src="cartaz-mestre-celio.webp" alt="Cartaz de homenagem ao Mestre Célio D'Lua pelos 22 de novembro" width="1086" height="1448" loading="lazy" />
+      </div>
+      <div class="homenagem-texto reveal reveal-delay-1">
+        <span class="homenagem-eyebrow">22 DE NOVEMBRO</span>
+        <h2>Homenagem ao Mestre Célio D'Lua</h2>
+        <p class="homenagem-sub">Mais de três décadas dedicadas à disciplina, ao equilíbrio e à transformação de vidas.</p>
+
+        <p>Neste dia <strong>22 de novembro</strong>, a família <strong>CTM Cabapuã Brasil</strong> e a <strong>Clínica Selene de Terapias</strong> celebram não apenas mais um ano de vida do <strong>Mestre Célio D'Lua (Roscelio Pereira Silva)</strong>, mas toda uma trajetória construída com honra, sabedoria e propósito.</p>
+
+        <blockquote>“Disciplina é liberdade. Conhecimento é poder. Equilíbrio é a chave.”</blockquote>
+
+        <p>Ao longo de mais de 30 anos de caminhada, sua liderança transcendeu os tatames e as rodas de capoeira, unindo o rigor técnico das artes marciais ao cuidado profundo da terapia integrativa, à preservação da cultura popular e ao incentivo constante à educação e ao empreendedorismo.</p>
+
+        <p>Para cada aluno, paciente e amigo que cruza o nosso caminho, o Mestre é exemplo vivo de que “o verdadeiro guerreiro não busca a vitória sobre o outro, mas a superação de si mesmo”.</p>
+
+        <p class="homenagem-final">Parabéns, Mestre Célio D'Lua! Que este novo ciclo seja repleto de saúde, axé, conquistas e caminhos abertos. Seguimos juntos nessa jornada!</p>
+
+        <span class="homenagem-selo">🥋 C.T.M. Cabapuã Brasil · Clínica Selene de Terapias</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="timeline-bar">
+    <div class="container">
+      <p><span class="t-red">C.T.M. Cabapuã desde 2018</span> &nbsp;|&nbsp; <span class="t-teal">Clínica Selene desde 2023</span> &nbsp;|&nbsp; <span class="t-gold">Uracan Wear desde 2025</span></p>
+    </div>
+  </div>
+  <footer class="main-footer">
+    <div class="container">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;padding:16px 0;margin-bottom:14px;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);">
+                <div class="sib-form" style="background:transparent;text-align:left;flex:1;min-width:280px;max-width:460px;">
+          <div id="sib-form-container" class="sib-form-container">
+            <div id="error-message" class="sib-form-message-panel" style="font-family:Helvetica,sans-serif;font-size:14px;text-align:left;color:#661d1d;background-color:#ffeded;border-color:#ff4949;border-radius:6px;max-width:460px;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">Sua assinatura não pôde ser validada.</span>
+              </div>
+            </div>
+            <div id="success-message" class="sib-form-message-panel" style="font-family:Helvetica,sans-serif;font-size:14px;text-align:left;color:#085229;background-color:#e7faf0;border-color:#13ce66;border-radius:6px;max-width:460px;">
+              <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+                <span class="sib-form-message-panel__inner-text">Você fez sua assinatura com sucesso.</span>
+              </div>
+            </div>
+            <div id="sib-container" class="sib-container sib-container--horizontal" style="background:transparent;padding:0;margin:0;">
+              <form id="sib-form" method="POST" action="https://e9878ea3.sibforms.com/serve/MUIFAHjvoLF2HBObMMr8psED0iiJtZg1X7em7uJixPlNQXLNNUzBUFy9qFQ1jEkggV84CXFiKVeAHJYtREmwZjLcSZE6HNaAZK_qrzb7yvjosJvtZnFwrdOmomzLNwAy9NwzLJqO5B7ATArrLPCDlhixyO5mbgocu8dI_wyKVtLtzdnVLW0ynF4eoQD2oBtKmFw6D43i8t2tFfZjZg==" data-type="subscription" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0;">
+                <label for="EMAIL" style="font-size:14px;color:var(--text-muted);margin-right:4px;">Receba novidades:</label>
+                <div class="sib-input" style="flex:1;min-width:180px;">
+                  <div class="form__entry" style="position:relative;">
+                    <input type="email" class="input" id="EMAIL" name="EMAIL" placeholder="Seu melhor e-mail" required data-required="true" autocomplete="off" style="width:100%;padding:10px 14px;border:1px solid var(--border-subtle);border-radius:50px;background:#222;color:#fff;box-sizing:border-box;font-size:13px;" />
+                    <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:12px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;"></label>
+                  </div>
+                </div>
+                <button type="submit" class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" style="background-color:var(--accent-gold);color:#000;padding:10px 20px;border:none;border-radius:50px;font-weight:bold;cursor:pointer;font-size:13px;line-height:1;min-height:0;">
+                  <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;">
+                    <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 10.423-28.618 15.822-59.097 15.822-91.096 0-106.23-86.408-192.636-192.636-192.636S64.982 148.738 64.982 254.968c0 31.999 5.399 62.478 15.822 91.096 2.877 5.715.878 12.675-4.663 15.874l-20.823 12.022c-5.541 3.199-7.54 10.159-4.663 15.874 5.25 9.088 15.26 14.702 25.992 14.702h2.762c1.31 0 2.626-.084 3.937-.248 7.816-1.216 15.489-3.131 22.833-5.673 9.905-3.463 20.801-5.268 31.872-5.268h24.156c11.07 0 21.967 1.805 31.872 5.268 7.344 2.542 15.017 4.457 22.833 5.673 1.311.164 2.627.248 3.937.248h2.762c10.732 0 20.742-5.614 25.992-14.702 2.877-5.715.878-12.675-4.663-15.874zM256.016 95.104c-88.211 0-159.744 71.533-159.744 159.744 0 57.274 30.203 107.4 75.465 135.875v-19.486c0-22.976 8.408-44.843 22.303-61.678l8.448-10.248-4.202-12.867c-9.703-29.702-15.322-60.275-15.322-91.399 0-68.052 55.357-123.409 123.409-123.409s123.409 55.357 123.409 123.409c0 31.124-5.619 61.697-15.322 91.399l-4.202 12.867 8.448 10.248c13.895 16.831 22.303 38.702 22.303 61.678v19.486c45.262-28.475 75.465-78.601 75.465-135.875 0-88.211-71.533-159.744-159.744-159.744z"/>
+                  </svg>
+                  <span class="sib-form-block__button-text">Assinar</span>
+                </button>
+                <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+                <input type="hidden" name="locale" value="pt">
+              </form>
+            </div>
+          </div>
+        </div>
+        <a href="https://whatsapp.com/channel/0029VbCqieN1dAvyyLTeea2K" target="_blank" rel="noopener noreferrer" style="color:#25D366;text-decoration:none;font-weight:bold;font-size:14px;">📱 Siga nosso canal no WhatsApp</a>
+      </div>
+      <p>&copy; 2026 C.T.M. Cabapuã Brasil — Guarulhos/SP. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511965962262?text=Ol%C3%A1!%20Acessei%20a%20p%C3%A1gina%20de%20Eventos%20do%20site%20cabapua.com.br%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+  <script>
+    (function() {
+      const toggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navLinks');
+      if (toggle && navMenu) {
+        toggle.addEventListener('click', function() {
+          const menu = navMenu.querySelector('ul');
+          if (menu) menu.classList.toggle('open');
+          const icon = toggle.querySelector('i');
+          icon.className = menu && menu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
+        });
+        navMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            const menu = navMenu.querySelector('ul');
+            if (menu) menu.classList.remove('open');
+            toggle.querySelector('i').className = 'fas fa-bars';
+          });
+        });
+      }
+      const header = document.getElementById('navbar');
+      window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 40);
+      }, { passive: true });
+
+      const revealElements = document.querySelectorAll('.reveal');
+      if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+          });
+        }, { threshold: 0.1 });
+        revealElements.forEach(function(el) { observer.observe(el); });
+      }
+
+      /* ===== CARROSSEL ===== */
+      const slides = document.querySelectorAll('#carouselSlides .slide-item');
+      const track = document.getElementById('carouselSlides');
+      const prev = document.getElementById('carouselPrev');
+      const next = document.getElementById('carouselNext');
+      const dotsWrap = document.getElementById('carouselDots');
+      let current = 0;
+      if (track && slides.length > 1) {
+        slides.forEach(function(_, i) {
+          const dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+          dot.addEventListener('click', function() { goTo(i); });
+          dotsWrap.appendChild(dot);
+        });
+        const dots = dotsWrap.querySelectorAll('.carousel-dot');
+        function goTo(index) {
+          current = (index + slides.length) % slides.length;
+          track.style.transform = 'translateX(-' + current * 100 + '%)';
+          dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+        }
+        prev.addEventListener('click', function() { goTo(current - 1); });
+        next.addEventListener('click', function() { goTo(current + 1); });
+        let startX = 0;
+        let deltaX = 0;
+        track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; deltaX = 0; }, { passive: true });
+        track.addEventListener('touchmove', function(e) { deltaX = e.touches[0].clientX - startX; }, { passive: true });
+        track.addEventListener('touchend', function() {
+          if (Math.abs(deltaX) > 50) { goTo(current + (deltaX < 0 ? 1 : -1)); }
+        });
+        setInterval(function() { goTo(current + 1); }, 6000);
+      }
+
+      /* ===== CONTADOR REGRESSIVO + ROTAÇÃO PÓS-EVENTO ===== */
+      const badge = document.getElementById('countdown-badge');
+      if (badge) {
+        const eventDate = new Date('2026-08-14T20:00:00').getTime();
+        const now = new Date().getTime();
+        const timeDiff = eventDate - now;
+
+        if (timeDiff > 0) {
+          const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+          if (daysLeft === 1) {
+            badge.textContent = '🔥 É AMANHÃ!';
+            badge.style.backgroundColor = '#e53e3e';
+          } else if (daysLeft <= 7) {
+            badge.textContent = '🔥 FALTAM ' + daysLeft + ' DIAS!';
+            badge.style.backgroundColor = '#e53e3e';
+          } else {
+            badge.textContent = '⚡ INSCRIÇÕES ABERTAS';
+            badge.style.backgroundColor = '#22c55e';
+          }
+        } else {
+          badge.textContent = '✅ REALIZADO';
+          badge.style.backgroundColor = '#64748b';
+
+          const titleBadge = document.getElementById('featured-title-badge');
+          if (titleBadge) {
+            titleBadge.textContent = 'Grande Sucesso';
+            titleBadge.style.color = '#64748b';
+          }
+          const mainTitle = document.getElementById('featured-main-title');
+          if (mainTitle) mainTitle.textContent = 'Graduação de Muay Thai 2026 Concluída!';
+          const desc = document.getElementById('featured-description');
+          if (desc) desc.textContent = 'Mais um capítulo marcante escrito nos ringues do CTM Cabapuã Brasil. Parabéns a todos os atletas que demonstraram garra, técnica e alcançaram suas novas graduações!';
+          const infoTable = document.getElementById('featured-info-table');
+          if (infoTable) infoTable.style.display = 'none';
+          const btn = document.getElementById('featured-action-btn');
+          if (btn) {
+            btn.textContent = 'Ver Cobertura Completa 📸';
+            btn.setAttribute('aria-label', 'Ver fotos da graduação de Muay Thai concluída');
+            btn.style.backgroundColor = 'transparent';
+            btn.style.border = '2px solid #22c55e';
+            btn.style.color = '#22c55e';
+            btn.style.boxShadow = 'none';
+            btn.href = 'https://www.youtube.com/@cabapuabrasil';
+          }
+        }
+      }
+    })();
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+</body>
+</html>
